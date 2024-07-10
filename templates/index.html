@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            <h1>Main page</h1>
+        </title>
+
+    </head>
+    <body style="display: flex;">
+        <h3 style=" display: flex; background-color: khaki;  width: 320px; height: 60px">Введите ограничения для фильтрации таблицы по 4м уровням.</h3>
+        <div style="display: flex; margin: 8px;">
+            <form action="/" method="post">
+                <h4>1. Путь к файлу с таблицей в формате tsv/csv.</h4>
+                <p><label>path</label> <input type="text" name="path"  value="" style="font-size:15px; background-color: khaki;" required />
+                <h4>2. Ограничения для первого уровня фильтрации.</h4>
+                <p><label>C1</label> <input type="number" name="C1"  value="" step="0.0001" style="font-size:15px; background-color: khaki;" style="font-size:15px" required/>
+                <p><label>C2</label> <input type="number" name="C2"  value="" step="0.0001" style="font-size:15px; background-color: khaki;" required />
+                <h4>3. Ограничения для второго уровня фильтрации.</h4>
+                <p><label>D1</label> <input type="number" name="D1"  value="" step="0.0001" style="font-size:15px; background-color: khaki;" required />
+                <p><label>D2</label> <input type="number" name="D2"  value="" step="0.0001" style="font-size:15px; background-color: khaki;" required />
+                <h4>4. Ограничения для третьего уровня фильтрации.</h4>
+                <p><label>F1</label> <input type="number" name="F1"  value="" step="0.0001" style="font-size:15px; background-color: khaki;" required />
+                <p><label>F2</label> <input type="number" name="F2"  value="" step="0.0001" style="font-size:15px; background-color: khaki;" required />
+                <h4>5. Ограничения для четвертого уровня фильтрации.</h4>
+                <p><label>H1</label> <input type="number" name="H1"  value="" step="0.0001" style="font-size:15px; background-color: khaki;" required />
+                <p><label>H2</label> <input type="number" name="H2"  value="" step="0.0001" style="font-size:15px; background-color: khaki;" required />
+                <p><button class="submit" style="width: 200px; height: 50px">submit</button>
+            </form>
+        </div>
+        <div >
+            <h3 style="display:inline-block; background-color: darkseagreen; width: 200px; height: 25px">Результаты</h3>
+        </div>
+        <div style="display: inline-block; margin: 2px; width: 300px; height: 10px">
+            {% if levels %}
+            <ul>
+                {% for i, lev in levels %}
+                <h4 style="background-color: darkseagreen;">{{ number_level[i] }}</h4>
+                    <li style="display: flex;"> Количество плохих: {{ lev[0] }}; </li>
+                    <li style="display: flex;"> Количество нейтральных: {{ lev[1] }}; </li>
+                    <li style="display: flex;"> Количество хороших: {{ lev[2] }}.</li>
+                {% endfor %}
+            </ul>
+            {% else %}
+                <h4>Заполните поля и ожидайте результатов.</h4>
+            {% endif %}
+        </div>
+    </body>
+</html>
