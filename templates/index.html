@@ -14,17 +14,17 @@
                 <h4>1. Путь к файлу с таблицей в формате tsv/csv.</h4>
                 <p><label>path</label> <input type="text" name="path"  value="" style="font-size:15px; background-color: khaki;" required />
                 <h4>2. Ограничения для первого уровня фильтрации.</h4>
-                <p><label>C1</label> <input type="number" name="C1"  value="" step="0.0001" style="font-size:15px; background-color: khaki;" style="font-size:15px" required/>
-                <p><label>C2</label> <input type="number" name="C2"  value="" step="0.0001" style="font-size:15px; background-color: khaki;" required />
+                <p><label>covered < C1</label> <input type="number" name="C1"  value="" step="0.0001" style="font-size:15px; background-color: khaki;" style="font-size:15px" required/>
+                <p><label>covered > C2</label> <input type="number" name="C2"  value="" step="0.0001" style="font-size:15px; background-color: khaki;" required />
                 <h4>3. Ограничения для второго уровня фильтрации.</h4>
-                <p><label>D1</label> <input type="number" name="D1"  value="" step="0.0001" style="font-size:15px; background-color: khaki;" required />
-                <p><label>D2</label> <input type="number" name="D2"  value="" step="0.0001" style="font-size:15px; background-color: khaki;" required />
+                <p><label>all_diff < D1</label> <input type="number" name="D1"  value="" step="0.0001" style="font-size:15px; background-color: khaki;" />
+                <p><label>all_diff > D2</label> <input type="number" name="D2"  value="" step="0.0001" style="font-size:15px; background-color: khaki;" />
                 <h4>4. Ограничения для третьего уровня фильтрации.</h4>
-                <p><label>F1</label> <input type="number" name="F1"  value="" step="0.0001" style="font-size:15px; background-color: khaki;" required />
-                <p><label>F2</label> <input type="number" name="F2"  value="" step="0.0001" style="font-size:15px; background-color: khaki;" required />
+                <p><label>lc_vcf > F1</label> <input type="number" name="F1"  value="" step="0.0001" style="font-size:15px; background-color: khaki;" />
+                <p><label>lc_vcf < F2</label> <input type="number" name="F2"  value="" step="0.0001" style="font-size:15px; background-color: khaki;" />
                 <h4>5. Ограничения для четвертого уровня фильтрации.</h4>
-                <p><label>H1</label> <input type="number" name="H1"  value="" step="0.0001" style="font-size:15px; background-color: khaki;" required />
-                <p><label>H2</label> <input type="number" name="H2"  value="" step="0.0001" style="font-size:15px; background-color: khaki;" required />
+                <p><label>hc_vcf < H1</label> <input type="number" name="H1"  value="" step="0.0001" style="font-size:15px; background-color: khaki;" />
+                <p><label>hc_vcf > H2</label> <input type="number" name="H2"  value="" step="0.0001" style="font-size:15px; background-color: khaki;" />
                 <p><button class="submit" style="width: 200px; height: 50px">submit</button>
             </form>
         </div>

@@ -11,7 +11,7 @@ number_level = ['1 уровень', '2 уровень', '3 уровень', '4 �
 @app.route('/', methods=['POST', 'GET'])
 def index():
     if request.method == 'POST':
-        levels = Genom().analis(request.form)
+        levels = Genom().analis(request.form.to_dict())
         if levels:
             return render_template(
                 'index.html',
